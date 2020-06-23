@@ -11,6 +11,7 @@ import { UserRegistrationComponent } from './User/user-registration/user-registr
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { UserLoginComponent } from './User/user-login/user-login.component';
 import { HomeComponent } from './home/home.component';
+import { Router } from '@angular/router';
 
 @NgModule({
    declarations: [
@@ -31,8 +32,12 @@ import { HomeComponent } from './home/home.component';
       UserService,
       // {
       //   provide: HTTP_INTERCEPTORS,
-      //   useClass: AuthInterceptor,
-      //   multi: true
+      //  // useClass: AuthInterceptor,
+      //   useFactory: (router: Router) => {
+      //     return new AuthInterceptor(router);
+      //   },
+      //   multi: true,
+      //   deps: [Router]
       // }
    ],
    bootstrap: [
